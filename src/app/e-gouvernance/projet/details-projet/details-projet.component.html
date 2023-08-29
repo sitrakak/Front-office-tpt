@@ -1,0 +1,67 @@
+
+<div class="main-container">
+    <div class="project-details"><h3>  
+      {{ projet?.nom }}  </h3>
+      <p><strong>Responsable :</strong>   {{ projet?.responsable }}  </p>
+      <p><strong>Description :</strong>   {{ projet?.description }}  </p>
+      <p><strong>Remarque :</strong>   {{ projet?.remarque }}  </p>
+      <p><strong>Limite :</strong>   {{ projet?.date_limite | date }}  </p>
+      </div>
+    <div class="table-container">
+      <div class="form-group">
+        <h2>Etapes du projet</h2>
+      </div>
+      <table class="step-table">
+        <thead>
+            <tr class="table-header">
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Date de début</th>
+                <th>Date d'accomplissement</th>
+                <th>Remarque</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let step of etapes">
+                <td> {{ step.nom }} </td>
+                <td> {{ step.description }} </td>
+                <td> {{ step.dateDebut | date }} </td>
+                <td> {{ step.datePrevu | date }} </td>
+                <td> {{ step.remarque }} </td>
+                <td><img [src]="step.image" alt="Image" width="50"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="comment-section">
+        <h2>Commentaires</h2>
+        <div class="comments">
+          <!-- Commentaire 1 -->
+          <div class="comment">
+            <p><strong>Utilisateur :</strong> Nom de l'utilisateur 1</p>
+            <p>Contenu du commentaire 1</p>
+          </div>
+          
+          <!-- Commentaire 2 -->
+          <div class="comment">
+            <p><strong>Utilisateur :</strong> Nom de l'utilisateur 2</p>
+            <p>Contenu du commentaire 2</p>
+          </div>
+          
+          <!-- Ajoutez plus de commentaires de la même manière -->
+        </div>
+        
+        <!-- Formulaire de commentaire -->
+        <div class="comment-form">
+          <h3>Ajouter un commentaire</h3>
+          <form>        
+            <label for="comment">Commentaire :</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+            
+            <button type="submit">Soumettre</button>
+          </form>
+        </div>
+      </div>
+  </div>
+  

@@ -1,0 +1,54 @@
+<!-- liste-infos.component.html -->
+
+  <ng-container>
+    <div class="infos-container">
+      <div class="info-card">
+        <div class="info-image">
+          <img [src]="info?.image" alt="Image du info">
+        </div>
+        <div class="info-details">
+          <h3>{{ info?.titre }}</h3>
+          <p><strong>Auteur :</strong> {{ info?.nom_auteur }} </p>
+          <p><strong>Contenu :</strong> {{ info?.contenu }} </p>
+          <p><strong>Date :</strong> {{ info?.date | date }} </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="commentaires-container">
+        <h3>Commentaires</h3>
+
+
+        <div class="comment-form-container">
+            <h3>Ajouter un commentaire</h3>
+            <form>
+              
+              <label for="comment">Commentaire :</label>
+              <textarea id="comment" name="comment" rows="4" required></textarea>
+              
+              <button type="submit">Soumettre</button>
+            </form>
+          </div>
+        
+        <!-- Commentaire 1 -->
+        <div class="commentaire">
+          <p><strong> <img [src]="" alt="Image user"> :</strong> Nom de l'utilisateur 1</p>
+          <p>Contenu du commentaire 1</p>
+        </div>
+        
+        <!-- Commentaire 2 -->
+        <div class="commentaire">
+          <p><strong> <img [src]="" alt="Image user"> :</strong> Nom de l'utilisateur 2</p>
+          <p>Contenu du commentaire 2</p>
+        </div>
+        
+        
+      </div>
+      
+    
+
+
+
+  </ng-container>
+
+

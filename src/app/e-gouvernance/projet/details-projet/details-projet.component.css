@@ -1,0 +1,111 @@
+.main-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .project-details {
+    flex: 1;
+  }
+  
+  .table-container {
+    flex: 2;
+  }
+  
+  .comment-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  
+.step-table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+
+.step-table img {
+    max-width: 50px;
+    max-height: 50px;
+}
+.table-container {
+    float: left;
+    width: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.step-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+.table-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.step-table th, .step-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.step-table th {
+    font-weight:700;
+}
+
+.step-table img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+
+.comment-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  
+  .comment {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .comment-form {
+    margin-top: 20px;
+  }
+  
+  .comment-form h3 {
+    margin-bottom: 10px;
+  }
+  
+  .comment-form form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .comment-form label,
+  .comment-form textarea,
+  .comment-form input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .comment-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }

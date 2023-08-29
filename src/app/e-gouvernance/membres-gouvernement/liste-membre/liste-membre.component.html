@@ -1,0 +1,14 @@
+<!-- liste-membres-gouvernement.component.html -->
+<div class="membres-container">
+    <h2>Liste des membres du gouvernement</h2>
+    <div class="membre-card" *ngFor="let membre of membres">
+      <div class="membre-image">
+        <img [src]="membre.image" alt="Image du membre">
+      </div>
+      <div class="membre-details">
+        <h3>{{ membre.nom }} {{ membre.prenom }}</h3>
+        <p><strong>Fonction :</strong> {{ membre.fonction }}</p>
+        <p><strong>État :</strong> {{ membre.etat }}</p>
+      </div>
+    </div>
+  </div>
