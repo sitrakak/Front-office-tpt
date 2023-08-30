@@ -39,6 +39,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DetailsProjetComponent } from './e-gouvernance/projet/details-projet/details-projet.component';
 import { FicheInfosComponent } from './e-gouvernance/infos/fiche-infos/fiche-infos.component';
+import { AppRoutingModule } from './app-routing.modules';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { FicheInfosComponent } from './e-gouvernance/infos/fiche-infos/fiche-inf
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
