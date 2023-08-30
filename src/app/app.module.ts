@@ -20,7 +20,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { RenduDirective } from './shared/rendu.directive';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { authGuard } from './shared/auth.guard';
 import { LoginComponent } from './login/login.component';
@@ -40,42 +40,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DetailsProjetComponent } from './e-gouvernance/projet/details-projet/details-projet.component';
 import { FicheInfosComponent } from './e-gouvernance/infos/fiche-infos/fiche-infos.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: LoginComponent
-  },
-  {
-    path: 'sign-in',
-    component: InscriptionComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'e-gouvernance',component: EGouvernanceComponent,
-    children: [
-      {path:'',component:AccueilComponent},
-      {path:'create-infos',component:CreateInfosComponent},
-      {path:'liste-infos',component:ListeInfosComponent},
-      {path:'modifier-infos/:id',component:ModifierMembreComponent},
-      {path:'fiche-infos/:id',component:FicheInfosComponent},
-
-
-      {path:'create-membre-gouvernement',component:AjoutMembreComponent},
-      {path:'liste-membre-gouvernement',component:ListeMembreComponent},
-      {path:'modifier-membre-gouvernement/:id',component:ModifierMembreComponent},
-
-      {path:'create-projet',component:CreateProjetComponent},
-      {path:'liste-projet',component:ListeProjetComponent},
-      {path:'modifier-projet',component:ModifierProjetComponent},
-      {path:'details-projet/:id',component:DetailsProjetComponent},
-      
-      
-    ]
-  }
-]
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,7 +63,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule, RouterModule.forRoot(routes),
+    FormsModule,
     HttpClientModule,
     MatNativeDateModule, ScrollingModule,
     MatButtonModule, MatIconModule, MatDividerModule,
