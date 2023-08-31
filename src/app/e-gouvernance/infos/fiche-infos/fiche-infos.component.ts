@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/shared/auth.service';
 import { CommentaireService } from 'src/app/shared/commentaire.service';
 import { InfoService } from 'src/app/shared/info.service';
 
@@ -13,14 +14,12 @@ export class FicheInfosComponent implements OnInit{
   info: any;
   commentaire: any;
   comment: any= '';
-  public constructor(private route:ActivatedRoute, private infoService:InfoService, private commentaireService:CommentaireService){}
+  public constructor(private route:ActivatedRoute, private infoService:InfoService, private commentaireService:CommentaireService, private authService: AuthService){}
 
   ngOnInit(){
     this.route.params.subscribe(params => {
       this.id = params['id'];
     });
-    console.log('idUser', localStorage.getItem("idUser"));
-    
     this.getInfo();
     this.getCommentaire();
   }
@@ -32,19 +31,23 @@ export class FicheInfosComponent implements OnInit{
       this.info = data;
     },
     (error) => {
-      // Gérer les erreurs
       console.error('Une erreur est survenue : ', error);
     })
   }
 
   getCommentaire() {
-    this.commentaireService.getCommentaire()
-    .subscribe(data => {
-      this.commentaire = data;
-      console.log('bbb',data);
+    this.commentaireService.getCommentaire(this.id, 'INFO')
+    .subscribe((resp: any) => {
+      this.commentaire = resp.data;
+
+      for (const comment of this.commentaire) {
+        this.authService.getUserById(comment.id_user)
+          .subscribe((user: any) => {
+            comment.user = user.nom;
+          });
+      }
     },
     (error) => {
-      // Gérer les erreurs
       console.error('Une erreur est survenue : ', error);
     });
   }

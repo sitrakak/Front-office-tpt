@@ -22,6 +22,10 @@ export class AuthService {
     return this.http.post<any>(this.uri_api+ '/loginCL', user);
   }
 
+  getUserById(id: any):Observable<any> {
+    return this.http.get<any[]>(this.uri_api+ '/usersCL/'+id);
+  }
+
   signUp(user:any):Observable<any> {
     return this.http.post<any>(this.uri_api+ '/signupCL', user);
   }

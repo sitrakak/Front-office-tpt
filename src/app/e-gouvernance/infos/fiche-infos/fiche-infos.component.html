@@ -29,17 +29,10 @@
           </div>
         
         <!-- Commentaire 1 -->
-        <div class="commentaire">
-          <p><strong> <img [src]="" alt="Image user"> :</strong> Nom de l'utilisateur 1</p>
-          <p>Contenu du commentaire 1</p>
+        <div class="commentaire" *ngFor="let comment of commentaire">
+          <p><strong> {{ comment.user }}</strong></p>
+          <p>{{ comment.contenu }}</p>
         </div>
-        
-        <!-- Commentaire 2 -->
-        <div class="commentaire">
-          <p><strong> <img [src]="" alt="Image user"> :</strong> Nom de l'utilisateur 2</p>
-          <p>Contenu du commentaire 2</p>
-        </div>
-        
         
       </div>
       
