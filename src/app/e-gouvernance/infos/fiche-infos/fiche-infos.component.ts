@@ -12,12 +12,15 @@ export class FicheInfosComponent implements OnInit{
   id:any;
   info: any;
   commentaire: any;
+  comment: any= '';
   public constructor(private route:ActivatedRoute, private infoService:InfoService, private commentaireService:CommentaireService){}
 
   ngOnInit(){
     this.route.params.subscribe(params => {
       this.id = params['id'];
     });
+    console.log('idUser', localStorage.getItem("idUser"));
+    
     this.getInfo();
     this.getCommentaire();
   }
@@ -44,6 +47,32 @@ export class FicheInfosComponent implements OnInit{
       // Gérer les erreurs
       console.error('Une erreur est survenue : ', error);
     });
+  }
+
+  commenter(){
+    const idUser = localStorage.getItem("idUser");
+    console.log(idUser);
+    
+    if (this.comment) {
+      const commentaire = {
+        type_mere: 'INFO',
+        id_mere: this.id,
+        id_user: idUser,
+        contenu: this.comment
+      }
+      console.log(commentaire);
+      
+      this.commentaireService.addCommentaire(commentaire)
+      .subscribe(data => {
+        console.log(data);
+      },
+      (error) => {
+        console.error('Une erreur est survenue : ', error);
+      });
+    }
+    else{
+      console.log('Veuillez ajouter un commentaire');
+    }
   }
   
 }

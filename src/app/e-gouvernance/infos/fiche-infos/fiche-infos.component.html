@@ -21,11 +21,9 @@
 
         <div class="comment-form-container">
             <h3>Ajouter un commentaire</h3>
-            <form>
-              
+            <form ngForm (ngSubmit)="commenter()">
               <label for="comment">Commentaire :</label>
-              <textarea id="comment" name="comment" rows="4" required></textarea>
-              
+              <textarea id="comment" name="comment" [(ngModel)]="comment" rows="4" required></textarea>
               <button type="submit">Soumettre</button>
             </form>
           </div>
