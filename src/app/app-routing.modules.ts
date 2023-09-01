@@ -14,6 +14,7 @@ import { DetailsProjetComponent } from './e-gouvernance/projet/details-projet/de
 import { ListeProjetComponent } from './e-gouvernance/projet/liste-projet/liste-projet.component';
 import { ModifierProjetComponent } from './e-gouvernance/projet/modifier-projet/modifier-projet.component';
 import { InscriptionComponent } from './user/inscription/inscription.component';
+import { DetailsEtapeComponent } from './e-gouvernance/projet/details-etape/details-etape.component';
 const routes: Routes = [
   {
     path: '',
@@ -45,6 +46,8 @@ const routes: Routes = [
       {path:'liste-projet',component:ListeProjetComponent},
       {path:'modifier-projet',component:ModifierProjetComponent},
       {path:'details-projet/:id',component:DetailsProjetComponent},
+
+      {path:'details-etape/:id',component:DetailsEtapeComponent},
       
       
     ]

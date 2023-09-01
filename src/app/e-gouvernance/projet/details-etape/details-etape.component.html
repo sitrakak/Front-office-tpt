@@ -1,0 +1,35 @@
+
+<div class="main-container">
+    <div class="project-details"><h3>
+      {{ etape?.nom }}  </h3>
+      <p><strong>Responsable :</strong>   {{ etape?.responsable }}  </p>
+      <p><strong>Description :</strong>   {{ etape?.description }}  </p>
+      <p><strong>Remarque :</strong>   {{ etape?.remarque }}  </p>
+      <p><strong>Debut :</strong>   {{ etape?.dateDebut | date }}  </p>
+      <p><strong>Limite :</strong>   {{ etape?.datePrevu | date }}  </p>
+      </div>
+    <div class="comment-section">
+        <h2>Commentaires</h2>
+        <div class="comments">
+          <!-- Commentaire 1 -->
+          <div class="comment" *ngFor="let comment of commentaire">
+            <p><strong> {{ comment.user }}</strong></p>
+            <p>{{ comment.contenu }}</p>
+          </div>
+          
+          <!-- Ajoutez plus de commentaires de la même manière -->
+        </div>
+        
+        <!-- Formulaire de commentaire -->
+        <div class="comment-form">
+          <h3>Ajouter un commentaire</h3>
+          <form ngForm (ngSubmit)="commenter()">
+            <label for="comment">Commentaire :</label>
+            <textarea id="comment" name="comment" [(ngModel)]="comment" rows="4" required></textarea>
+            
+            <button type="submit">Soumettre</button>
+          </form>
+        </div>
+      </div>
+  </div>
+  

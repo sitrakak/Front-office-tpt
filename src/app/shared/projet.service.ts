@@ -26,6 +26,10 @@ export class ProjetService {
     return this.http.get<any[]>(this.uri_api+ '/etapes/projet/'+id);
   }
 
+  getEtapeById(id: any):Observable<any> {
+    return this.http.get<any[]>(this.uri_api+ '/etapes/'+id);
+  }
+
   addEtapeProjet(etape:any):Observable<any> {
     return this.http.post<Projet>(this.uri_api+ '/etapes', etape);
   }

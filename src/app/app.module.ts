@@ -40,6 +40,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DetailsProjetComponent } from './e-gouvernance/projet/details-projet/details-projet.component';
 import { FicheInfosComponent } from './e-gouvernance/infos/fiche-infos/fiche-infos.component';
 import { AppRoutingModule } from './app-routing.modules';
+import { DetailsEtapeComponent } from './e-gouvernance/projet/details-etape/details-etape.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { AppRoutingModule } from './app-routing.modules';
     ModifierProjetComponent,
     AccueilComponent,
     DetailsProjetComponent,
-    FicheInfosComponent
+    FicheInfosComponent,
+    DetailsEtapeComponent
   ],
   imports: [
     BrowserModule,
