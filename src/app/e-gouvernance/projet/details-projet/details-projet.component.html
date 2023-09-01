@@ -38,15 +38,9 @@
         <h2>Commentaires</h2>
         <div class="comments">
           <!-- Commentaire 1 -->
-          <div class="comment">
-            <p><strong>Utilisateur :</strong> Nom de l'utilisateur 1</p>
-            <p>Contenu du commentaire 1</p>
-          </div>
-          
-          <!-- Commentaire 2 -->
-          <div class="comment">
-            <p><strong>Utilisateur :</strong> Nom de l'utilisateur 2</p>
-            <p>Contenu du commentaire 2</p>
+          <div class="comment" *ngFor="let comment of commentaire">
+            <p><strong> {{ comment.user }}</strong></p>
+            <p>{{ comment.contenu }}</p>
           </div>
           
           <!-- Ajoutez plus de commentaires de la même manière -->
@@ -55,9 +49,9 @@
         <!-- Formulaire de commentaire -->
         <div class="comment-form">
           <h3>Ajouter un commentaire</h3>
-          <form>        
+          <form ngForm (ngSubmit)="commenter()">
             <label for="comment">Commentaire :</label>
-            <textarea id="comment" name="comment" rows="4" required></textarea>
+            <textarea id="comment" name="comment" [(ngModel)]="comment" rows="4" required></textarea>
             
             <button type="submit">Soumettre</button>
           </form>
