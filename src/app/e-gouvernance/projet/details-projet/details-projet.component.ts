@@ -100,7 +100,7 @@ export class DetailsProjetComponent implements OnInit{
   }
 
   getCommentaire() {
-    this.commentaireService.getCommentaire(this.id, 'INFO')
+    this.commentaireService.getCommentaire(this.id, 'PROJET')
     .subscribe((resp: any) => {
       this.commentaire = resp.data;
 
@@ -118,7 +118,6 @@ export class DetailsProjetComponent implements OnInit{
 
   commenter(){
     const idUser = localStorage.getItem("idUser");
-    console.log(idUser);
     
     if (this.comment) {
       const commentaire = {
@@ -127,11 +126,10 @@ export class DetailsProjetComponent implements OnInit{
         id_user: idUser,
         contenu: this.comment
       }
-      console.log(commentaire);
       
       this.commentaireService.addCommentaire(commentaire)
       .subscribe(data => {
-        console.log(data);
+        this.getCommentaire();
       },
       (error) => {
         console.error('Une erreur est survenue : ', error);
