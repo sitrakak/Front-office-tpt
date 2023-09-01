@@ -1,5 +1,5 @@
 {
-  "name": "Front_office",
+  "name": "front-office",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
