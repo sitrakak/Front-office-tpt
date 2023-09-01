@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "front-office": {
+    "Front-office-tpt": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/front-office",
+            "outputPath": "dist/Front-office-tpt",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "front-office:build:production"
+              "browserTarget": "Front-office-tpt:build:production"
             },
             "development": {
-              "browserTarget": "front-office:build:development"
+              "browserTarget": "Front-office-tpt:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "front-office:build"
+            "browserTarget": "Front-office-tpt:build"
           }
         },
         "test": {
