@@ -22,6 +22,7 @@
             <p><strong>Responsable :</strong> {{ projet.responsable }}</p>
             <p><strong>Description :</strong> {{ projet.description }}</p>
             <p><strong>Remarque :</strong> {{ projet.remarque }}</p>
+            <p *ngIf="projet.budget"><strong>Budget :</strong>   {{ projet.budget }}  </p>
             <p><strong>Limite :</strong> {{ projet.date_limite | date }}</p>
             <a href="" routerLink="/e-gouvernance/details-projet/{{ projet._id }}"><button class="details-button">Details</button></a>
           </div>
