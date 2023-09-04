@@ -24,6 +24,7 @@
             <form ngForm (ngSubmit)="commenter()">
               <label for="comment">Commentaire :</label>
               <textarea id="comment" name="comment" [(ngModel)]="comment" rows="4" required></textarea>
+              <p style="color: red;" *ngIf="message">{{ message }}</p>
               <button type="submit">Soumettre</button>
             </form>
           </div>
